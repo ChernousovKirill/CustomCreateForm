@@ -1,0 +1,26 @@
+<aura:component controller="createController" >
+  <aura:attribute name="newHouse" type="House__c"
+        default="{ 'sobjectType': 'House__c',
+                   'houseName': '',
+                   'Adress': '',
+                   'Price': ''}" />
+    <aura:attribute name="message" type="String" default=""/>
+    
+    <lightning:card iconName="standard:house" title="Add a House">
+        <div class="slds-p-around_medium">
+            <lightning:layout>
+                <lightning:layoutItem size="4" padding="around-small">
+                    <lightning:input aura:id="house"
+                                         label="House Name"
+                                         value="{!v.newHouse.Name}" />
+                </lightning:layoutItem> 
+                <lightning:layoutItem size="8" padding="around-small">
+                    <lightning:input aura:id="house" label="Adress" type="Text" value="{!v.newHouse.Adress__c}"/>
+                    <lightning:input aura:id="house" label="Price" type="Currency" value="{!v.newHouse.Priece__c}"/>
+                    <lightning:button label="Create House" onclick="{!c.handleCreateHouse}" variant="brand" class="slds-m-top_medium"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <p>{!v.message}</p>
+        </div>
+    </lightning:card>
+</aura:component>
