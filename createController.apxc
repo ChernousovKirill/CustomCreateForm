@@ -1,0 +1,8 @@
+public class createController {
+  @AuraEnabled 
+     public static House__c createHouse(House__c house){
+        upsert house;
+        return house;
+    }
+ 
+}
